@@ -1,0 +1,17 @@
+name: "openllama-7b"
+batch: 512
+context_size: 2048
+f16: true
+nmap: true
+backend: llama
+gpu_layers: 35
+
+parameters:
+  model: open-llama-7b-q4_0
+  temperature: 0.2
+  top_k: 80
+  top_p: 0.7
+  
+template:
+  completion: openllama-completion
+  chat: openllama-chat
