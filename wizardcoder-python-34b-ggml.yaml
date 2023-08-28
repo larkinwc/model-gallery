@@ -1,0 +1,42 @@
+name: wizardcoder-python-34b
+description: |
+  Empowering Code Large Language Models with Evol-Instruct
+license: Apache 2.0
+urls:
+  - https://github.com/nlpxucan/WizardLM
+config_file: |
+  name: wizardcoder-python-34b
+  # Default model parameters
+  parameters:
+    # Relative to the models path
+    model: wizardcoder-python-34b-v1.0.ggmlv3.Q4_0.bin
+    temperature: 0.9
+    top_k: 50
+    top_p: 0.95
+  backend: starcoder
+  context_size: 8192
+  template:
+    completion: wizardcode-completion
+    chat: wizardcode-chat
+  stopwords:
+  - "<unk>"
+  - <|endoftext|>
+  - <|end|>
+files:
+  - filename: "wizardcoder-python-34b-v1.0.ggmlv3.Q4_0.bin"
+    sha256: "cf4133dd1238d45c9ca7bc213e7a193ca3851b78b385f0f48f066be8ee0ac897"
+    uri: "https://huggingface.co/TheBloke/WizardCoder-Python-34B-V1.0-GGML/raw/main/wizardcoder-python-34b-v1.0.ggmlv3.Q4_0.bin"
+prompt_templates:
+  - name: wizardcode-completion
+    content: |
+      {{.Input}}
+  - name: wizardcode-chat
+    content: >
+      Below is an instruction that describes a task. Write a response that
+      appropriately completes the request
+
+
+      ### Instruction: {{.Input}}
+
+
+      ### Response:
