@@ -1,0 +1,17 @@
+name: "bge-large-en-embeddings"
+license: "Apache 2.0"
+urls:
+- https://huggingface.co/BAAI/bge-large-en
+description: |
+    bge-large-en model that can be used for embeddings
+config_file: |
+    parameters:
+      model: pytorch_model.bin
+    backend: huggingface-embeddings
+    embeddings: true
+    gpu_layers: 35
+
+files:
+- filename: "pytorch_model.bin"
+  sha256: "5ccd0ac7807e3ebe6a00c9bf11ac6cdd9a475bab954e8a86b90adcb4372c624d"
+  uri: "https://huggingface.co/BAAI/bge-large-en/resolve/main/pytorch_model.bin"
